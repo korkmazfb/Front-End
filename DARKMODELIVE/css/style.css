@@ -1,0 +1,237 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline: 0.3 rem solid blue;
+}
+
+button:hover, .dashboardheader_mode:hover{
+    cursor: pointer !important;
+}
+
+:root{
+    --background-color: #212730;
+    --font--color: #d4d4d4;
+    --gradient: linear-gradient(to bottom right, #eaafc8,10%, #654ea3);
+    --product-border-color: rgba(212, 212, 212, 0.4);
+    --product-border: 0.3rem dashed var(--product-border-color);
+}
+
+html{
+    font-size: 62.5%;
+ 
+}
+
+body{
+    font-size: 2rem;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    color: var(--font--color);
+    font-family: 'Roboto', sans-serif;
+    padding: 4rem;
+    background: var(--gradient);
+    animation-name: popup;
+    animation-duration: 0.8s;
+    animation-fill-mode: backwards;
+    transition: 0.2s transform;
+
+}
+
+aside{
+    padding: 4rem;
+    background: var(--background-color);
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+
+}
+
+.navigation{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    
+}
+
+.navigation_list{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.navigation_listitem{
+    list-style: none;
+}
+
+.navigation_link{
+    text-decoration: none;
+    color: var(--font--color);
+    width: 100%;
+    display: block;
+    position: relative;
+    display: flex;
+}
+
+.navigation_link:visited{
+    color: var(--font--color);
+
+}
+
+.navigation_message{
+    font-size: 70%;
+    width: 2rem;
+    height: 2rem;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0%, -50%);
+}
+
+.navigation_premium{
+    border: none;
+    color: var(--font--color);
+    background: var(--gradient);
+    width: 20rem;
+    font-size: 80%;
+    padding: 2rem;
+    border-radius: 5rem;
+}
+
+main{
+    background: var(--background-color);
+    color: var(--font--color);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+
+}
+
+.dashboardheader{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboardheader_heading{
+    font-size: 300%;
+    font-weight: 700;
+}
+
+.dashboardheader_mode{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 8rem;
+    height: 4rem;
+    background: #F9F3EE;
+    border-radius: 5rem;
+    position: relative;
+
+}
+
+.dashboardheader_mode:checked{
+    background: rgb(33, 39, 48);
+}
+
+.dashboardheader_mode::after{
+    content: "";
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: var(--gradient);
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(30%, -50%);
+    transition: 0.4s all;
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.dashboardheader_mode:checked::after{
+    transform: translate(-50%, -50%);
+    
+}
+
+.products{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+}
+
+.products_product{
+    list-style: none;
+    width: 20rem;
+    height: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    border: var(--product-border);
+    border-radius: 0.5rem;
+}
+
+.products_addbutton{
+    border: none;
+    color: var(--font--color);
+    background: var(--gradient);
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    font-size: 120%;
+}
+
+.products_text{
+    font-size: 80%;
+    opacity: 0.8;
+}
+
+@keyframes popup {
+    from{
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+@media screen and (max-width: 62.5rem){
+    body{
+        grid-template-columns: 100%;
+        color: var(--font--color);
+        font-family: 'Roboto', sans-serif;
+        padding: 2rem;
+    }
+    main, aside{
+        border-radius: 0;
+    }
+    .navigation{
+        gap: 2rem;
+    }
+    .products_product{
+        flex-grow: 1;
+    }
+
+}
+
+@media screen and (max-width: 37.5rem){
+    .dashboardheader{
+        flex-direction: column-reverse;
+        justify-content: baseline;
+    }
+}
+

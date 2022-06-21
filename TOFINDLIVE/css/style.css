@@ -1,0 +1,243 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 2rem;
+  font-family: sans-serif;
+  background: #fbd3e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #bb377d,
+    #fbd3e9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #bb377d,
+    #fbd3e9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.profile {
+  width: 20rem;
+  height: 20rem;
+  background: white;
+  border-radius: 5rem;
+  box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.2);
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.profile:hover{
+    cursor: pointer;
+}
+
+.profile_header {
+  height: 10rem;
+  position: relative;
+}
+
+.profile:nth-of-type(1) .profile_header{
+  background: url("/img/header1.webp");
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+  background-size: 100% 100%;
+  background-size: cover;
+}
+
+.profile:nth-of-type(2) .profile_header{
+  background: url("/img/header2.webp");
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+  background-size: 100% 100%;
+  background-size: cover;
+}
+
+.profile:nth-of-type(3) .profile_header {
+  background: url("/img/header3.webp");
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+  background-size: 100% 100%;
+  background-size: cover;
+}
+
+.uknown, .known {
+  height: 15rem;
+  width: 15rem;
+  background: #eee;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 0.5rem solid rgba(255, 255, 255, 0.8);
+}
+
+.uknown_face {
+  width: 40%;
+  height: 40%;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.uknown_body {
+  width: 80%;
+  height: 80%;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+.known_img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile_body {
+  height: calc(85% - 10rem);
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  border-bottom-left-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+}
+
+.profile_text {
+  margin-top: 2rem;
+  font-size: 80%;
+  opacity: 0;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.2s;
+}
+
+.profile_footer {
+  height: 15%;
+  border-bottom-left-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  width: 2.2rem;
+  height: 2.2rem;
+  background: red;
+  border: none;
+  position: relative;
+  transform: rotate(45deg);
+  opacity: 0;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.2s;
+}
+
+.heart:hover{
+    cursor: pointer;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.heart::before {
+  transform: translateX(-50%);
+}
+
+.heart::after {
+  transform: translateY(-50%);
+}
+
+@keyframes expand {
+    0%{
+        height:20rem;
+        width: 20rem;
+    }
+    50%{
+        height: 20rem;
+        width: 40rem;
+    }
+    100%{
+        height: 40rem;
+        width: 40rem;
+    }
+    
+}
+
+@media screen and (max-width: 50rem) {
+    .profile, .heart, .profile_text{
+        animation-name: "";
+        animation-duration: 0;
+    }
+    .profile{
+        height:40rem;
+        width: 40rem;
+    }
+    .profile_text, .heart{
+        opacity: 1;
+    }
+    
+}
+
+@keyframes popup {
+    from{
+        opacity: 0;
+        transform: translateY(2rem) ;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+@keyframes hart {
+    from{
+        opacity: 0;
+        transform: translateY(2rem) rotate(45deg) ;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) rotate(45deg);
+    }
+    
+}
+

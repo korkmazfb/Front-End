@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darkmode</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto:wght@300;400;500;700&family=Smooch&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <aside>
+      <nav class="navigation">
+        <ul class="navigation_list">
+          <li class="navigation_listitem">
+            <a href="" class="navigation_link">Home</a>
+          </li>
+          <li class="navigation_listitem">
+            <a href="" class="navigation_link">Facturen <span class="navigation_message">2</span> </a>
+          </li>
+          <li class="navigation_listitem">
+            <a href="" class="navigation_link">Bestellingen</a>
+          </li>
+          <li class="navigation_listitem">
+            <a href="" class="navigation_link">Retour <span class="navigation_message">1</span></a>
+          </li>
+          <li class="navigation_listitem">
+            <a href="" class="navigation_link">Contact</a>
+          </li>
+        </ul>
+        <button class="navigation_premium">Go premium</button>
+      </nav>
+    </aside>
+    <main>
+        <header class="dashboardheader">
+            <h1 class="dashboardheader_heading">Mijn Producten</h1>
+            <label for="mode">
+                <input type="checkbox" name="" id="mode" class="dashboardheader_mode">
+            </label>
+        </header>
+        <ul class="products">
+            <li class="products_product">
+                <button class="products_addbutton">+</button>
+                <p class="products_text">Voeg een product toe</p>
+            </li>
+
+            <li class="products_product">
+                <button class="products_addbutton">+</button>
+                <p class="products_text">Voeg een product toe</p>
+            </li>
+
+            <li class="products_product">
+                <button class="products_addbutton">+</button>
+                <p class="products_text">Voeg een product toe</p>
+            </li>
+
+            <li class="products_product">
+                <button class="products_addbutton">+</button>
+                <p class="products_text">Voeg een product toe</p>
+            </li>
+
+ 
+        </ul>
+        
+    </main>
+  </body>
+</html>
+
+
+<!--- 
+
+    de site bestaat uit een aside en een main
+    daarin heb je verschillende classes/ nav / li / a / checkboxes
+
+    Aside = 25%
+    Main = 75%
+
+    de main is het grote deel en daarin heb je vire kaarten en een plusje met een border radius
+    cirkel er omheen dit zorgt voor een cool effect ook heb je links
+    bij de aside een navbar met een premium button die buiten de navbar is 
+    zodat het ver van elkaar is en een cool uitzicht geeft.
+
+    Daarnaast heb je de vette switch knop die er voorzorgt dat de site 
+    dark
+    en
+    light wordt en dat gebeurd meest door variabelen te gebruiken van de style.css en die worden dan geswitcht via
+    de main.js 
+
+    er is ook een vette popup bij het laden van de site
+    dit is gedaan door keyframes en transition.
+
+    ook is de site gebruikt met grid en heel veel flexx natuurlijk ;)
+-->
